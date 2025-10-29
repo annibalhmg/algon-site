@@ -1,64 +1,270 @@
-<!doctype html>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Algon</title>
-  <meta name="description" content="Algon — em breve." />
-  <meta property="og:title" content="Algon" />
-  <meta property="og:description" content="Em breve." />
+  <title>Algon Investments | Plataforma Institucional</title>
+  <meta name="description" content="Algon Investments — plataforma de investimento e construção de negócios. Página institucional oficial." />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="Algon Investments" />
+  <meta property="og:description" content="Plataforma institucional." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="/og-image.png" />
+  <meta property="og:url" content="https://www.algon.com.br/" />
+  <meta property="og:image" content="/logo.png" />
+  <meta name="theme-color" content="#0A122A" />
   <link rel="icon" href="/favicon.ico" />
   <style>
-    :root { --bg:#0b1020; --fg:#eaeef8; --muted:#98a2b3; --accent:#b99a3a; }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
-      background: radial-gradient(1200px 800px at 70% -10%, rgba(185,154,58,0.15), transparent 60%),
-                  radial-gradient(900px 600px at -10% 120%, rgba(185,154,58,0.10), transparent 60%),
-                  var(--bg);
-      color: var(--fg);
-      display: grid; place-items: center;
+    :root{
+      --bg: #0a0f1c;
+      --bg-soft: #0f162b;
+      --txt: #e8ecf1;
+      --muted: #a7b0c0;
+      --brand: #c7a34b;
+      --line: rgba(199,163,75,.25);
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw: 1120px;
     }
-    .card {
-      width: min(680px, 92vw);
-      padding: 48px 40px; border-radius: 24px; 
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
-      text-align: center;
-      backdrop-filter: blur(6px);
-      animation: fade 600ms ease-out both;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--txt); background: radial-gradient(1200px 800px at 80% -10%, #172240 0%, transparent 60%),
+                         radial-gradient(1000px 700px at 10% -20%, #1b274a 0%, transparent 55%),
+                         var(--bg);
+      line-height:1.6;
     }
-    @keyframes fade { from { opacity: 0; transform: translateY(8px);} to { opacity: 1; transform: none;} }
-    .logo { height: 72px; width: auto; display: block; margin: 0 auto 16px; filter: drop-shadow(0 6px 18px rgba(185,154,58,0.25)); }
-    h1 { margin: 6px 0 10px; font-size: clamp(28px, 4.2vw, 40px); letter-spacing: 0.2px; }
-    p { margin: 0; color: var(--muted); font-size: clamp(14px, 2.4vw, 16px); }
-    .email {
-      display: inline-flex; align-items: center; gap: 10px; margin-top: 22px; padding: 12px 16px;
-      border-radius: 999px; border: 1px solid rgba(255,255,255,0.12);
-      text-decoration: none; color: var(--fg); font-weight: 600;
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--maxw); margin-inline:auto; padding:0 20px}
+    header{
+      position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(8px);
+      background:rgba(10,15,28,.7); border-bottom:1px solid rgba(255,255,255,.04)
     }
-    .email:hover { border-color: rgba(255,255,255,0.28); }
-    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent); }
-    footer { margin-top: 24px; font-size: 12px; color: var(--muted); }
+    .nav{display:flex; align-items:center; justify-content:space-between; height:68px}
+    .brand{display:flex; gap:12px; align-items:center}
+    .brand img{height:36px; width:auto; display:block}
+    .brand span{font-weight:600; letter-spacing:.4px}
+    nav ul{display:flex; gap:22px; list-style:none; margin:0; padding:0}
+    nav a{opacity:.9}
+    nav a:hover{opacity:1; color:var(--brand)}
+
+    .hero{padding:88px 0 48px; text-align:center}
+    .hero .logo{height:90px; width:auto; margin:0 auto 18px; display:block; image-rendering:auto}
+    h1{font-size:clamp(28px, 3.5vw, 48px); line-height:1.2; margin:0 0 12px}
+    .sub{font-size:clamp(14px, 2vw, 18px); color:var(--muted); max-width:760px; margin:0 auto 22px}
+    .cta{display:inline-block; border:1px solid var(--line); padding:12px 18px; border-radius:999px}
+    .cta strong{color:var(--brand)}
+
+    section{padding:52px 0; border-top:1px solid rgba(255,255,255,.06)}
+    .grid{display:grid; grid-template-columns: repeat(12,1fr); gap:22px}
+    .card{grid-column: span 12; background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+          border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)}
+    @media (min-width: 880px){
+      .card.half{grid-column: span 6}
+      .card.third{grid-column: span 4}
+    }
+    h2{font-size:clamp(20px, 3vw, 28px); margin:0 0 12px}
+    h3{font-size:18px; margin:0 0 6px}
+    p{margin:0 0 12px}
+    .muted{color:var(--muted)}
+    .list{margin:0; padding-left:18px}
+
+    .kpi{display:flex; gap:18px; align-items:center}
+    .kpi .num{font-size:28px; font-weight:700; color:var(--brand)}
+
+    .team{display:grid; grid-template-columns: repeat(12,1fr); gap:22px}
+    .member{grid-column: span 12; display:flex; gap:14px; align-items:flex-start; padding:18px; border:1px dashed rgba(255,255,255,.12); border-radius:var(--radius)}
+    .avatar{height:48px; width:48px; border-radius:50%; background:var(--bg-soft)}
+    @media (min-width: 720px){ .member{grid-column: span 6} }
+
+    footer{padding:36px 0 48px; color:var(--muted)}
+    .foot{display:flex; flex-direction:column; gap:12px}
+    @media (min-width: 720px){ .foot{flex-direction:row; justify-content:space-between; align-items:center} }
+
+    .sr-only{position:absolute; left:-9999px}
+    .sep{height:1px; background:rgba(255,255,255,.08); margin:10px 0 18px}
+    .pill{display:inline-block; padding:6px 10px; border-radius:999px; background:rgba(199,163,75,.12); border:1px solid var(--line); color:var(--brand); font-size:12px; font-weight:600; letter-spacing:.4px}
   </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Algon Investments",
+    "url":"https://www.algon.com.br/",
+    "logo":"https://www.algon.com.br/logo.png"
+  }
+  </script>
 </head>
 <body>
-  <main class="card" role="main" aria-label="Algon landing">
-    <!-- Troque /logo.svg pelo caminho real do seu arquivo de logo -->
-    <img src="logo.PNG" alt="Algon" class="logo" />
-    <h1>Algon</h1>
-    <p>Em breve. Entre em contato:</p>
-    <!-- Atualize o e-mail abaixo -->
-    <a class="email" href="mailto:contato@algon.com.br" aria-label="Enviar e-mail para Algon">
-      <span class="dot" aria-hidden="true"></span>
-      contato@algon.com.br
-    </a>
-    <footer>© <span id="year"></span> Algon. Todos os direitos reservados.</footer>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Algon Investments - Início">
+        <img src="/logo.png" alt="Logo Algon Investments" />
+        <span>Algon Investments</span>
+      </a>
+      <nav aria-label="Primária">
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#foco">Foco</a></li>
+          <li><a href="#principios">Princípios</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <section class="hero" aria-labelledby="headline">
+      <img class="logo" src="/logo.png" alt="Algon Investments" />
+      <h1 id="headline">Construindo e investindo com visão de longo prazo</h1>
+      <p class="sub">Algon Investments é uma plataforma institucional focada em negócios B2B resilientes e essenciais. Atuamos com rigor analítico, governança e parceria com empreendedores e investidores.</p>
+      <a class="cta" href="#contato" aria-label="Ir para contato"><strong>Fale conosco</strong> →</a>
+    </section>
+
+    <section id="sobre" aria-labelledby="sobre-h">
+      <div class="grid">
+        <article class="card half" role="article">
+          <span class="pill">Quem somos</span>
+          <h2 id="sobre-h">Algon Investments em poucas palavras</h2>
+          <p>Somos uma plataforma de investimento e gestão operacional. Nosso objetivo é identificar empresas de nicho com alto potencial de criação de valor, promovendo crescimento sustentável e excelência operacional.</p>
+          <div class="kpi">
+            <div class="num">+27</div>
+            <div>
+              <div><strong>transações</strong> em M&A e finanças corporativas</div>
+              <div class="muted">Experiência acumulada pelo time</div>
+            </div>
+          </div>
+        </article>
+        <article class="card half" role="article">
+          <span class="pill">Como atuamos</span>
+          <h2>Disciplina, parceria e execução</h2>
+          <p>Combinamos análise profunda de setores com execução prática no dia a dia, priorizando cultura, clientes e geração de caixa.</p>
+          <ul class="list">
+            <li>Governança e métricas claras</li>
+            <li>Estruturas de incentivo alinhadas</li>
+            <li>Capital paciente e foco no cliente</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="foco" aria-labelledby="foco-h">
+      <div class="grid">
+        <article class="card third">
+          <h3 id="foco-h">Setores de foco</h3>
+          <p class="muted">Operações B2B essenciais com receitas recorrentes.</p>
+          <ul class="list">
+            <li>Software & Serviços de missão crítica</li>
+            <li>Logística & Cadeia de suprimentos</li>
+            <li>Serviços especializados</li>
+          </ul>
+        </article>
+        <article class="card third">
+          <h3>Tese</h3>
+          <p>Preferimos empresas com <em>market fit</em> comprovado, margens saudáveis e potencial de crescimento orgânico e via aquisições.</p>
+        </article>
+        <article class="card third">
+          <h3>Perfil de empresa</h3>
+          <p>R$ 50–150MM de receita; margens EBITDA consistentes; baixa intensidade de capital; base de clientes diversificada.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="principios" aria-labelledby="pri-h">
+      <div class="grid">
+        <article class="card">
+          <h2 id="pri-h">Princípios</h2>
+          <div class="grid">
+            <div class="card third">
+              <h3>Longo prazo</h3>
+              <p class="muted">Decisões orientadas por valor e perenidade.</p>
+            </div>
+            <div class="card third">
+              <h3>Transparência</h3>
+              <p class="muted">Comunicação direta e dados auditáveis.</p>
+            </div>
+            <div class="card third">
+              <h3>Execução</h3>
+              <p class="muted">Metas claras, rituais e responsabilização.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="time" aria-labelledby="time-h">
+      <div class="grid">
+        <article class="card">
+          <h2 id="time-h">Time</h2>
+          <div class="team">
+            <div class="member">
+              <div class="avatar" aria-hidden="true"></div>
+              <div>
+                <h3>Annibal Gonçalves</h3>
+                <p class="muted">Estratégia, M&A e Operações</p>
+                <p>Atuação em liderança executiva, integração de aquisições e finanças corporativas.</p>
+              </div>
+            </div>
+            <div class="member">
+              <div class="avatar" aria-hidden="true"></div>
+              <div>
+                <h3>Pedro Almeida</h3>
+                <p class="muted">Finanças, Operações e Governança</p>
+                <p>Experiência em CFO e transformação operacional com foco em eficiência e KPIs.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contato" aria-labelledby="contato-h">
+      <div class="grid">
+        <article class="card half">
+          <h2 id="contato-h">Contato</h2>
+          <p>Para oportunidades, imprensa ou parcerias, fale conosco.</p>
+          <p>
+            <strong>Email:</strong> <a href="mailto:investidores@algon.com.br">investidores@algon.com.br</a><br/>
+            <strong>Endereço:</strong> São Paulo, Brasil
+          </p>
+        </article>
+        <article class="card half">
+          <h2>Perguntas frequentes</h2>
+          <details>
+            <summary>Vocês estão captando recursos?</summary>
+            <p class="muted">Esta é uma página institucional. Caso haja processo de captação, divulgaremos formalmente.</p>
+          </details>
+          <div class="sep"></div>
+          <details>
+            <summary>Como enviar um <em>deck</em> ou oportunidade?</summary>
+            <p class="muted">Envie uma mensagem com resumo (setor, tamanho, tese) para o email acima.</p>
+          </details>
+        </article>
+      </div>
+    </section>
   </main>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+  <footer>
+    <div class="container foot">
+      <div class="brand">
+        <img src="/logo.png" alt="Logo Algon Investments" height="24" />
+        <span>Algon Investments</span>
+      </div>
+      <div>
+        <small>© <span id="year"></span> Algon Investments. Todos os direitos reservados.</small>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href');
+        const el = document.querySelector(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth'}); }
+      })
+    })
+  </script>
 </body>
 </html>
